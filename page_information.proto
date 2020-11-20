@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package page_information;
+
+message PageUrl {
+  string page_url = 1;
+}
+
+message PageScreenshot {
+  string screenshot = 1;
+  bool success = 2;
+  int32 status = 3;
+  repeated string errors = 4;
+}
+
+service PageInformationService {
+  rpc GetPageScreenshot (PageUrl) returns (PageScreenshot);
+}
