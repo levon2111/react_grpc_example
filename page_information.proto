@@ -13,6 +13,19 @@ message PageScreenshot {
   repeated string errors = 4;
 }
 
+message PageInformationRequest {
+  string page_url = 1;
+}
+
+message PageInformationResponse {
+  string dom = 1;
+  repeated string resources = 2;
+  bool success = 3;
+  int32 status = 4;
+  repeated string errors = 5;
+}
+
 service PageInformationService {
   rpc GetPageScreenshot (PageUrl) returns (PageScreenshot);
+  rpc GetPageInformation (PageInformationRequest) returns (PageInformationResponse);
 }

@@ -74,7 +74,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     
 ### Generate 
     protoc page_information.proto --js_out=import_style=commonjs,binary:src --grpc-web_out=import_style=commonjs,mode=grpcwebtext:src
-    
+    Also we need to disable eslint validation for protoc
+    /* eslint-disable */ 
 ### For running grpc proxy (envoy)
     docker build -t grpc-medium-envoy:1.0 .
     docker run --network=host grpc-medium-envoy:1.0

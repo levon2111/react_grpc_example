@@ -3,7 +3,7 @@
  * @enhanceable
  * @public
  */
-/* eslint-disable */
+
 // GENERATED CODE -- DO NOT EDIT!
 
 
@@ -147,6 +147,86 @@ proto.page_information.PageInformationServicePromiseClient.prototype.getPageScre
       request,
       metadata || {},
       methodDescriptor_PageInformationService_GetPageScreenshot);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.page_information.PageInformationRequest,
+ *   !proto.page_information.PageInformationResponse>}
+ */
+const methodDescriptor_PageInformationService_GetPageInformation = new grpc.web.MethodDescriptor(
+  '/page_information.PageInformationService/GetPageInformation',
+  grpc.web.MethodType.UNARY,
+  proto.page_information.PageInformationRequest,
+  proto.page_information.PageInformationResponse,
+  /**
+   * @param {!proto.page_information.PageInformationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.page_information.PageInformationResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.page_information.PageInformationRequest,
+ *   !proto.page_information.PageInformationResponse>}
+ */
+const methodInfo_PageInformationService_GetPageInformation = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.page_information.PageInformationResponse,
+  /**
+   * @param {!proto.page_information.PageInformationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.page_information.PageInformationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.page_information.PageInformationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.page_information.PageInformationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.page_information.PageInformationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.page_information.PageInformationServiceClient.prototype.getPageInformation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/page_information.PageInformationService/GetPageInformation',
+      request,
+      metadata || {},
+      methodDescriptor_PageInformationService_GetPageInformation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.page_information.PageInformationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.page_information.PageInformationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.page_information.PageInformationServicePromiseClient.prototype.getPageInformation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/page_information.PageInformationService/GetPageInformation',
+      request,
+      metadata || {},
+      methodDescriptor_PageInformationService_GetPageInformation);
 };
 
 
